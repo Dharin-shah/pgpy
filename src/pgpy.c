@@ -3,6 +3,8 @@
 #include "fmgr.h"
 #include "executor/spi.h"  // for SPI functions
 #include <Python.h>
+#include "utils/builtins.h"
+
 
 PG_MODULE_MAGIC;
 
