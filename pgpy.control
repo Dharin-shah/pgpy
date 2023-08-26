@@ -1,5 +1,5 @@
 # pgpy.control
-comment = 'Extension to run Python ML models with data fetched using C API'
+comment = 'Python integration for PostgreSQL'
 default_version = '1.0'
 module_pathname = '$libdir/pgpy'
 relocatable = true

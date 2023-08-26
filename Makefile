@@ -1,6 +1,7 @@
 # Makefile for pgpy
 
 EXTENSION = pgpy
+EXTVERSION=1.0
 MODULE_big = pgpy
 OBJS = src/pgpy.o  # Assuming your C source file is src/pgpy.c
 
@@ -10,3 +11,12 @@ PG_CFLAGS += -I/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Version
 PG_CONFIG ?= pg_config
 PGXS := /opt/homebrew/opt/postgresql@15/lib/postgresql/pgxs/src/makefiles/pgxs.mk
 include $(PGXS)
+
+DATA = sql/$(EXTENSION)--$(EXTVERSION).sql
+
+all: sql/$(EXTENSION)--$(EXTVERSION).sql
+
+sql/$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql
+	cp $< $@
+
+EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql
