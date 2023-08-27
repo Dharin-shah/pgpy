@@ -8,3 +8,7 @@
 CREATE FUNCTION fetch_and_process() RETURNS text
     AS '$libdir/pgpy', 'fetch_and_process'
     LANGUAGE C STRICT;
+
+CREATE OR REPLACE FUNCTION pgpy_hello()
+    RETURNS text AS 'MODULE_PATHNAME', 'pgpy_hello'
+    LANGUAGE C STRICT;
